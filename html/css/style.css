@@ -6,10 +6,11 @@ body {
 	/*font-family: UTM Bebas;*/
 	font-family: Roboto;
 	font-weight: normal;
+	color: #28324e;
 }
 h1,h2,h3,h4,h5,h6 {
 	margin: 0;
 }
-a:hover{
+a:hover,a:focus,a:active{
 	text-decoration: none;
 }
