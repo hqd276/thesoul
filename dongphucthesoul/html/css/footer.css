@@ -1,0 +1,19 @@
+footer {
+	background-color: #d14841;
+	padding-top: 30px;
+	padding-bottom: 20px; 
+	color: #fff;
+	margin-top: 30px;
+	font-size: 18px;
+}
+footer .hotline {
+	font-size: 28px;
+	padding: 10px 20px;
+	background-color: #475577;
+	border: 1px solid #fff;
+	margin-bottom: 20px;
+}
+footer .logo {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
