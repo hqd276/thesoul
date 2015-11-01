@@ -1,0 +1,13 @@
+.member-list {
+
+}
+.member-list li{
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.member-list li img{
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
