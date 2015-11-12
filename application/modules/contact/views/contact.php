@@ -1,58 +1,71 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/contact.css">
 <div class="container">
-    <h1><?php echo $setting['contact']['data']->name;?></h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo base_url();?>" target="">Trang chủ</a></li>
-        <li><a href="<?php echo base_url('contact');?>" target=""><b><?php echo $setting['contact']['data']->name;?></b></a></li>
-    </ol>
+	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
 
-	<form class="form-horizontal  col-sm-8" role="form" method="post" action="">
-		<span class="success">
-			<?php 
-			if(isset($b_Check))
-				if ($b_Check){
-					echo "Send Success!";
-				}else{
-					echo "Send Fail";
-				}
-			?>
-		</span>
-		<?php echo form_error('email'); ?>
-		<?php echo form_error('content'); ?>
+	<img class="adv-contact" src="<?php echo base_url();?>assets/images/banner3.jpg">
+	<div class="contact-block text-center">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="contact-btn text-uppercase pull-left">
+				Liên hệ qua hotline<br>
+				<i class="fa fa-phone"></i>0979680346
+			</div>
+			<div class="contact-btn text-uppercase pull-right">
+					Liên hệ đặt hàng  <br>
+					qua Facebook
+			</div>
+			<div class="clearfix"></div>
+			<div class="contact-detail">
+				<?php echo $setting['contact']['data']->detail;?>
+			</div>
+			<hr>
+			<h4 class="contact-btn text-uppercase ">hướng dẫn map</h4>
+			<div class="map">
+				<div id="map"></div>
+			</div>
 
-		<div class="col-sm-12">
-			<?php echo $setting['contact']['data']->description;?>
-		</div>
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-10">
-			  	<input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
+			<div class="contact-detail">
+				<?php echo $setting['contact']['data']->description;?>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
-			<div class="col-sm-10">
-			  	<input type="" class="form-control" id="inputEmail3" name="phone" placeholder="Phone" value="<?php echo set_value('phone'); ?>">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Content</label>
-			<div class="col-sm-10">
-				<textarea class="form-control" name="content" placeholder="Content"><?php echo set_value('content'); ?></textarea>
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			  <button type="submit" class="btn btn-default">Send</button>
-			</div>
-		</div>
-	</form>
-	<div class="col-sm-4">
-		
-		<div>
-			<?php echo $setting['contact']['data']->detail;?>
+			<hr>
 		</div>
 	</div>
 </div>
 <div class="clearfix"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+
+<script>
+	//load map
+	function initMap() {
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 13
+	  });
+
+	  // Try HTML5 geolocation.
+	  if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(function(position) {
+	      var pos = {
+	        // lat: position.coords.latitude,
+	        // lng: position.coords.longitude
+	        lat: 20.971934,
+	        lng: 105.7742316
+	      };
+	      var marker = new google.maps.Marker({
+		    position: pos,
+		    map: map,
+		    title: '5 Kiến trúc sư!'
+		  });
+	      map.setCenter(pos);
+	    }, function() {
+	    });
+	  }
+	}
+
+    $(document).ready(function(){
+    	initMap();
+		//fix loi map chi hien thi o tab 1
+		// $('a[href="#contact"]').on('shown.bs.tab', function (e) {
+		// 	initMap();
+		// });
+	});
+</script>

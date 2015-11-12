@@ -57,9 +57,14 @@ $route['detail/(:any)'] = "news/detail_t/$1";
 $route['service/(:any)'] = "news/index_t/3/$1";
 $route['project/(:any)'] = "project/index_t/$1";
 
-$route['chi-tiet-san-pham/(:any)'] = "product/detail_t/$1";
+$route['lien-he'] = "contact";
+$route['ve-chung-toi'] = "about";
+$route['tin-tuc'] = "news";
+$route['thu-vien-anh'] = "gallery";
 
+$route['danh-muc-san-pham'] = "product/index_t";
 $route['danh-muc-san-pham/(:any)'] = "product/index_t/$1";
+$route['chi-tiet-san-pham/(:any)'] = "product/detail_t/$1";
 
 $route['admin'] = "admin";
 // $route['list-support'] = "admin/support";

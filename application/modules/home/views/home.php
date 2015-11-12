@@ -1,6 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/home.css">
 
 <div class="container">
+	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
+
 	<section class="banner">
 		<div id="tpCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->

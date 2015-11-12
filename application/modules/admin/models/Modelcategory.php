@@ -12,6 +12,8 @@ class ModelCategory extends CI_Model{
 			foreach ($where as $key => $value) {
 				$strWhere .= " AND $key = $value";
 			}
+		}else{
+			$strWhere .= ' AND '.$where;
 		}
 		$strLimit = "";
 		if ($limit!=null) 

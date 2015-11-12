@@ -21,37 +21,41 @@ class Product extends MX_Controller {
 	}
 	
 	public function index($cat = 0){
-		// $dataR = Modules::run('right','');
-		// $this->template->set_partial('right','right',$dataR);
-
 		$data = array('slug'=>'');
-		$data['title'] = "Product";
+		$data['title'] = "Sản phẩm";
 		$data['page'] = "product";
 
 		if ($cat>0){
 			$category = $this->modelcategory->getCategoryById($cat);
 			$data['cat'] = $category;
-			$list_product = $this->modelproduct->getProduct(array('category_id'=>$cat),' LIMIT 0,5');
+			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent='.$cat);
+			$list_product = $this->modelproduct->getProduct(array('category_id'=>$cat),' LIMIT 0,16');
 		}else{
 			$data['cat'] = array('id'=>0,'name'=>'');
-			$list_product = $this->modelproduct->getProduct('',' LIMIT 0,5');
+			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent=-1');
+			$list_product = $this->modelproduct->getProduct('',' LIMIT 0,16');
 		}
 
 		$data['list_product'] = $list_product;
 		$this->template->build('product',$data);
 	}
 	public function index_t($slug = ''){
-		$dataR = Modules::run('right',0);
-		$this->template->set_partial('right','right',$dataR);
 
 		$data = array('slug'=>'');
-
-		$category = $this->modelcategory->getCategoryBy('slug',$slug);
-		if ($category){
-			$data['cat'] = $category;
-			$data['title'] = $category['name'];
-			$data['description'] = $category['description'];
-			$list_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),' LIMIT 0,5');
+		if ($slug){
+			$category = $this->modelcategory->getCategoryBy('slug',$slug);
+			if ($category){
+				$data['cat'] = $category;
+				$data['title'] = $category['name'];
+				$data['description'] = $category['description'];
+				$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent='.$category['id']);
+				$list_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),' LIMIT 0,16');
+			}
+		}else{
+			$data['cat'] = array('id'=>0,'name'=>'');
+			$data['title'] = 'Danh mục sản phẩm';
+			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent=-1');
+			$list_product = $this->modelproduct->getProduct('',' LIMIT 0,16');
 		}
 
 		$data['list_product'] = $list_product;

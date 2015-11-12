@@ -19,13 +19,13 @@
         <a href=""><i class="fa fa-facebook"></i></a>
       </div>
           <ul class="nav navbar-nav text-uppercase">
-            <li class="<?php if($page=='about') echo 'active';?>"><a href="<?php echo base_url('about');?>">Giới thiệu</a></li>
-            <li class="<?php if($page=='product') echo 'active';?>"><a href="<?php echo base_url('product');?>">Sản phẩm</a></li>
+            <li class="<?php if($page=='about') echo 'active';?>"><a href="<?php echo base_url('ve-chung-toi');?>">Giới thiệu</a></li>
+            <li class="<?php if($page=='product') echo 'active';?>"><a href="<?php echo base_url('danh-muc-san-pham');?>">Sản phẩm</a></li>
             <li class="<?php if($page=='order') echo 'active';?>"><a href="<?php echo base_url('order');?>">Đặt hàng</a></li>
-            <li class="<?php if($page=='news') echo 'active';?>"><a href="<?php echo base_url('news');?>">Tin tức</a></li>
-            <li class="<?php if($page=='contact') echo 'active';?>"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
+            <li class="<?php if($page=='news') echo 'active';?>"><a href="<?php echo base_url('tin-tuc');?>">Tin tức</a></li>
+            <li class="<?php if($page=='contact') echo 'active';?>"><a href="<?php echo base_url('lien-he');?>">Liên hệ</a></li>
             <li class="<?php if($page=='pricelist') echo 'active';?>"><a href="<?php echo base_url('pricelist');?>">Bảng giá</a></li>
-            <li class="<?php if($page=='gallery') echo 'active';?>"><a href="<?php echo base_url('gallery');?>">Ảnh ọt</a></li>
+            <li class="<?php if($page=='gallery') echo 'active';?>"><a href="<?php echo base_url('thu-vien-anh');?>">Ảnh ọt</a></li>
           </ul>
         
       </div><!-- /.navbar-collapse -->
