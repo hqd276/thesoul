@@ -63,6 +63,19 @@ tinymce.init({
 			  	<input type="file" class="form-control" id="inputEmail3" name="image" placeholder="Image">
 			</div>
 		</div>
+		<?php if ($item['key']=='banggia'){?>
+		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Image 1</label>
+			<div class="col-sm-10">
+				<?php 
+				if ($item['image1']!='') {
+					echo "<img class='img_item' style='height:150px;' src='".base_url("uploads/settings/".$item['image1'])."'/>";
+				}
+				?>
+			  	<input type="file" class="form-control" id="inputEmail3" name="image1" placeholder="Image">
+			</div>
+		</div>
+		<?php }else{?>
 		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Description</label>
 			<div class="col-sm-10">
@@ -75,6 +88,7 @@ tinymce.init({
 				<textarea class="form-control" id="detail" name="detail" placeholder="Detail"><?php echo $item['detail']; ?></textarea>
 			</div>
 		</div>
+		<?php }?>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 			  <button type="submit" class="btn btn-default" value="ok" name="submit">Send</button>

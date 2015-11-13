@@ -11,7 +11,7 @@ class Mgallery extends CI_Model{
     }
     
     //hàm thực hiện công việc upload và resize lại hình ảnh
-    public function do_upload($type){
+    public function do_upload($type,$name='image'){
         $this->_gallery_url.=$type;
         $this->_gallery_path.=$type;
 
@@ -20,7 +20,7 @@ class Mgallery extends CI_Model{
                         'max_size'      => '4096');
 
         $this->load->library("upload",$config);
-        if(!$this->upload->do_upload("image")){
+        if(!$this->upload->do_upload($name)){
             $error = array($this->upload->display_errors());
             return false;
         }else{

@@ -51,6 +51,8 @@ class Product extends MX_Controller{
 		$data['older_link'] = $older_link;
 		$data['list'] = $product;
 		// var_dump($data['list']);die;
+		$type = 0;
+		$data['type'] = $type;
 
 		$this->template->build('listproduct',$data);
 	}
@@ -59,7 +61,7 @@ class Product extends MX_Controller{
 		$user = $this->session->userdata('user'); 
 
 		$data = array();
-		$type = 1;
+		$type = 0;
 		$data['type'] = $type;
 		switch ($type) {
 			case 0:
@@ -167,7 +169,7 @@ class Product extends MX_Controller{
 		$data = array();
 		if ($id<=0)
 			redirect(base_url('admin/product/index/'.$type));
-		$type =  1;
+		$type =  0;
 		$data['type'] = $type;
 		$data['title'] = "Edit product";
 

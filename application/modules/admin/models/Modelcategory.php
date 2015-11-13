@@ -12,7 +12,7 @@ class ModelCategory extends CI_Model{
 			foreach ($where as $key => $value) {
 				$strWhere .= " AND $key = $value";
 			}
-		}else{
+		}elseif($where!=''){
 			$strWhere .= ' AND '.$where;
 		}
 		$strLimit = "";

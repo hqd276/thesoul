@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class About extends MX_Controller{
+class Pricelist extends MX_Controller{
 	
 	public function __construct(){
 		parent::__construct();
@@ -11,13 +11,13 @@ class About extends MX_Controller{
 	
 	public function index(){
 		$data = array();
-		$data['page'] = 'about';
+		$data['page'] = 'pricelist';
 		$this->load->model(array('admin/modelsetting'));
-		$about = $this->modelsetting->getSettingByKey('gioithieu');
+		$about = $this->modelsetting->getSettingByKey('banggia');
 		$about['data'] = json_decode($about['value']);
 		$data['about'] = $about;
 
-		$this->template->build('about',$data);
+		$this->template->build('pricelist',$data);
 	}
 	
 }
