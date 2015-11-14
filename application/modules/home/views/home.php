@@ -39,26 +39,13 @@
 	<section class="hot-product">
 		<img class="header-hot" src="<?php echo base_url();?>assets/images/hotproduct.png">
 		<div class="row">
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/1.jpg">
+			<?php foreach ($product_home as $key => $value){?>
+			<div class="col-sm-3 col-xs-6 item text-center">
+				<a href="<?php echo base_url('chi-tiet-san-pham/'.$value['slug']);?>">
+					<img src="<?php echo base_url('uploads/product/thumbs/'.$value['image']);?>">
 				</a>
 			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/2.jpg">
-				</a>
-			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/1.jpg">
-				</a>
-			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/2.jpg">
-				</a>
-			</div>
+			<?php }?>
 		</div>
 	</section>
 
@@ -67,26 +54,13 @@
 			<div class="text-center"><span class="text-uppercase">Khách hàng tiêu biểu</span></div>
 		</div>
 		<div class="row">
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/ex1.jpg">
+			<?php foreach ($partner as $key => $value){?>
+			<div class="col-sm-3 col-xs-6 item text-center">
+				<a href="<?php echo $value['description']?>">
+					<img src="<?php echo base_url('uploads/member/thumbs/'.$value['image']);?>">
 				</a>
 			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/ex2.jpg">
-				</a>
-			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/ex1.jpg">
-				</a>
-			</div>
-			<div class="col-sm-3 col-xs-6 item">
-				<a href="">
-					<img src="<?php echo base_url();?>assets/images/ex2.jpg">
-				</a>
-			</div>
+			<?php }?>
 		</div>
 	</section>
 
@@ -97,28 +71,19 @@
 					<a href="">Tin tức</a>
 				</div>
 				<ul class="media-list">
-						<li class="media">
+					<?php foreach ($news_home as $key => $value){?>
+					<li class="media">
 					  	<div class="media-left">
-						    <a href="#">
-						      <img class="media-object" src="<?php echo base_url();?>assets/images/mam-non.jpg" alt="...">
+						    <a href="<?php echo base_url('chi-tiet-tin/'.$value['slug']);?>">
+						      <img class="media-object" src="<?php echo base_url('uploads/news/thumbs/'.$value['image']);?>" alt="...">
 						    </a>
 					  	</div>
 					  	<div class="media-body">
-						    <h4 class="media-heading">Tiêu đề tin</h4>
-						    <p>Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. </p>
+						    <h4 class="media-heading"><?php echo $value['title'] ?></h4>
+						    <p><?php echo $value['description'] ?></p>
 					  	</div>
 				  	</li>
-				  	<li class="media">
-					  	<div class="media-left">
-						    <a href="#">
-						      <img class="media-object" src="<?php echo base_url();?>assets/images/mam-non.jpg" alt="...">
-						    </a>
-					  	</div>
-					  	<div class="media-body">
-						    <h4 class="media-heading">Tiêu đề tin</h4>
-						    <p>Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. Nội dung tin. </p>
-					  	</div>
-				  	</li>
+				  	<?php }?>
 				</ul>
 			</div>
 			<div class="about-us col-sm-6">

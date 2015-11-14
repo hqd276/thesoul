@@ -61,7 +61,7 @@ class Product extends MX_Controller{
 		$user = $this->session->userdata('user'); 
 
 		$data = array();
-		$type = 0;
+		$type = 1;
 		$data['type'] = $type;
 		switch ($type) {
 			case 0:
@@ -87,7 +87,7 @@ class Product extends MX_Controller{
 		$this->load->helper(array('util')); 
 
 		$this->load->model(array('modelcategory'));
-		$category = $this->modelcategory->getCategories('');
+		$category = $this->modelcategory->getCategories(array("type"=>$type));
 		// $category = add_array_key("id",$category);
 
 		$dataC = array('title' =>'',
@@ -169,7 +169,7 @@ class Product extends MX_Controller{
 		$data = array();
 		if ($id<=0)
 			redirect(base_url('admin/product/index/'.$type));
-		$type =  0;
+		$type =  1;
 		$data['type'] = $type;
 		$data['title'] = "Edit product";
 

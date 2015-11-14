@@ -1,123 +1,22 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-datetimepicker.css">
-<script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript">
-	$(function () {
-		$('#to').datetimepicker({
-			pickTime: false,
-		});
-		$('#from').datetimepicker({
-			pickTime: false,
-		});
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/booking.css">
+<div class="container">
+	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
+	
+	<h3 class="text-uppercase pull-left">Liên hệ với The soul</h3>
+	<div class="clearfix"></div>
+	<p>Đối với The Soul, việc luôn tìm mọi phương án để tối ưu quy trình làm việc giúp cho khách hàng có thê đặt hàng một cách dễ dàng nhất là công việc quan trọng nhất. Để được tư vấn tận tình và dễ hiểu nhất, các bạn chỉ việc gọi ngay cho Hotline 24/24 0979680346. Ngoài ra các bạn cũng có thể đặt hàng bằng cách inbox qua Page Facebook: https://www.facebook.com/dongphucthesoul?fref=ts sẽ luôn có người online để chào đón các bạn.</p>
 
-		$("#adult").keydown(function (e) {
-	        checkInput(e);
-    	});
-    	$("#children").keydown(function (e) {
-	        checkInput(e);
-    	});
-    	$("#phone").keydown(function (e) {
-	        checkInput(e);
-    	});
-    	function checkInput(e){
-			// Allow: backspace, delete, tab, escape, enter and .
-	        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-	             // Allow: Ctrl+A
-	            (e.keyCode == 65 && e.ctrlKey === true) || 
-	             // Allow: home, end, left, right
-	            (e.keyCode >= 35 && e.keyCode <= 39)) {
-	                // alert("Input Number Only!");
-	                return;
-	        }
-	        // Ensure that it is a number and stop the keypress
-	        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-	            e.preventDefault();
-	        }
-    	}
-	});
-</script>
+	<img class="adv-top" src="<?php echo base_url('uploads/banner/banner1.jpg');?>">
 
-<div class="booking-form col-sm-12 bg-white">
-	<form class="form-horizontal col-sm-12" role="form" method="post" action="">
-		<!-- <h2 class="text-uppercase">Booking form</h2> -->
-		<img class="col-sm-12" src="<?php echo base_url();?>images/booking.jpg">
-		<div class="form-group">
-			<div>
-				<span class="success">
-					<?php 
-					if(isset($b_Check))
-						if ($b_Check){
-							echo "Send Success!";
-						}else{
-							echo "Send Fail";
-						}
-					?>
-				</span>
-				<label class="control-label" for="inputError1"><?php echo form_error('email'); ?></label><br>
-				<label class="control-label" for="inputError1"><?php echo form_error('content'); ?></label>
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">From</label>
-			<div class="col-sm-4">
-				<div class='input-group date' id='from'>
-				  	<input type="text" class="form-control" id="" name="from" placeholder="From" data-date-format="DD/MM/YYYY" value="<?php echo set_value('from'); ?>">
-					<span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar"></span>
-					</span>
-				</div>
-			</div>
-			<label for="inputEmail3" class="col-sm-2 control-label">To</label>
-			<div class="col-sm-4">
-				<div class='input-group date' id='to'>
-				  	<input type="text" class="form-control" id="" name="to" placeholder="To" data-date-format="DD/MM/YYYY" value="<?php echo set_value('to'); ?>">
-					<span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar"></span>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Departure</label>
-			<div class="col-sm-4">
-			  	<input type="text" class="form-control" id="" name="departure" placeholder="Departure" value="<?php echo set_value('departure'); ?>">
-			</div>
-			<label for="inputEmail3" class="col-sm-2 control-label">Destination</label>
-			<div class="col-sm-4">
-			  	<input type="text" class="form-control" id="" name="destination" placeholder="Destination" value="<?php echo set_value('destination'); ?>">
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Guests</label>
-			<div class="col-sm-2">
-			  	<input type="text" class="form-control" id="adult" name="adult" placeholder="Adult" value="<?php echo set_value('adult'); ?>">
-			</div>
-			<div class="col-sm-2">
-			  	<input type="text" class="form-control" id="children" name="children" placeholder="Children" value="<?php echo set_value('children'); ?>">
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-10">
-			  	<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
-			<div class="col-sm-10">
-			  	<input type="phone" class="form-control" id="phone" name="phone" placeholder="Phone" value="<?php echo set_value('phone'); ?>">
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Content</label>
-			<div class="col-sm-10">
-				<textarea class="form-control" name="content" placeholder="Content"><?php echo set_value('content'); ?></textarea>
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			  <button type="submit" class="btn btn-default">Send</button>
-			</div>
-		</div>
-	</form>
+	<h3 class="text-uppercase pull-left">Ý tưởng thiết kế</h3>
+	<div class="clearfix"></div>
+	<p>Sau khi liên hệ và được tư vấn một cách hợp lý nhất, các bạn sẽ lên ý tưởng mà mình muốn thể hiện lên chiếc áo, The Soul có rất nhiều Designer giỏi. Trước tiên chúng mình sẽ vẽ phác ra giấy, lên ý tưởng, sau đó các bạn duyệt, chúng mình đưa lên máy vẽ màu. Như vậy, quá trình làm lên một bản thiết kế cũng rất đơn giản, nhưng lại rất tỉ mỉ về chất lượng.</p>
+
+	<img class="adv-top" src="<?php echo base_url('uploads/banner/banner2.jpg');?>">
+
+	<h3 class="text-uppercase pull-left">Sản xuất & nhận hàng</h3>
+	<div class="clearfix"></div>
+	<p>Sau khi khâu thiết kế hoàn tất, hàng của các bạn sẽ được sản xuất theo thời gian quy định. Khi hàng đã sản xuất xong, The Soul sẽ giao hàng tận nơi mà bạn muốn, và tất nhiên là free rồi.</p>
+
+	<img class="adv-top" src="<?php echo base_url('uploads/banner/banner3.jpg');?>">
 </div>

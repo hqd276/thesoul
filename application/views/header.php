@@ -21,7 +21,7 @@
           <ul class="nav navbar-nav text-uppercase">
             <li class="<?php if($page=='about') echo 'active';?>"><a href="<?php echo base_url('ve-chung-toi');?>">Giới thiệu</a></li>
             <li class="<?php if($page=='product') echo 'active';?>"><a href="<?php echo base_url('danh-muc-san-pham');?>">Sản phẩm</a></li>
-            <li class="<?php if($page=='order') echo 'active';?>"><a href="<?php echo base_url('order');?>">Đặt hàng</a></li>
+            <li class="<?php if($page=='booking') echo 'active';?>"><a href="<?php echo base_url('dat-hang');?>">Đặt hàng</a></li>
             <li class="<?php if($page=='news') echo 'active';?>"><a href="<?php echo base_url('tin-tuc');?>">Tin tức</a></li>
             <li class="<?php if($page=='contact') echo 'active';?>"><a href="<?php echo base_url('lien-he');?>">Liên hệ</a></li>
             <li class="<?php if($page=='pricelist') echo 'active';?>"><a href="<?php echo base_url('pricelist');?>">Bảng giá</a></li>

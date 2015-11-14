@@ -16,4 +16,5 @@ footer .hotline {
 footer .logo {
 	margin-top: 20px;
 	margin-bottom: 30px;
+	max-width: 100%;
 }

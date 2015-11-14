@@ -57,10 +57,13 @@ $route['detail/(:any)'] = "news/detail_t/$1";
 $route['service/(:any)'] = "news/index_t/3/$1";
 $route['project/(:any)'] = "project/index_t/$1";
 
+$route['dat-hang'] = "booking";
 $route['lien-he'] = "contact";
 $route['ve-chung-toi'] = "about";
 $route['tin-tuc'] = "news";
 $route['thu-vien-anh'] = "gallery";
+
+$route['chi-tiet-tin/(:any)'] = "news/detail_t/$1";
 
 $route['danh-muc-san-pham'] = "product/index_t";
 $route['danh-muc-san-pham/(:any)'] = "product/index_t/$1";

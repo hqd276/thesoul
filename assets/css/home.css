@@ -1,9 +1,10 @@
-.banner-middle {
+.carousel {
 	margin-bottom: 20px;
 	display: block;
 }
-.banner-middle img{
+.carousel .carousel-inner img{
 	width: 100%;
+	height: 400px;
 }
 .header-hot {
 	width: 100%;
@@ -27,17 +28,18 @@
 	padding: 15px 25px;
 	z-index: 1;
 }
-.hot-product .item {
+.hot-product .item,.customer .item {
 	margin-top: 30px;
+	height: 263px;
+	overflow: hidden;
 }
-.hot-product .item img {
-	width: 100%;
+.hot-product .item a,.customer .item a {
+	border:solid 1px #ccc;
+	display: block;
+	height: 100%;
 }
-.customer .item {
-	margin-top: 30px;
-}
-.customer .item img {
-	width: 100%;
+.hot-product .item img,.customer .item img  {
+	max-width: 100%;
 }
 .news-about {
 	
@@ -98,5 +100,9 @@
 	.header-customer div span {
 		font-size: 12px;
 		padding: 10px 15px;
+	}
+	.carousel .carousel-inner img{
+		width: 100%;
+		height: 200px;
 	}
 }

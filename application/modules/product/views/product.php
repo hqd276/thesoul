@@ -13,16 +13,10 @@
 	  	</div>
 		<div class="product-form col-sm-9">
 			<?php foreach ($list_product as $key => $value) {?>
-				<div class="item">
-					<div class="col-md-4">
+				<div class="item col-sm-3">
+					<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug']?>">
 						<img class="img-responsive" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
-					</div>
-					<div class="col-md-8">
-						<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug']?>"><h4 class="text-uppercase"><?php echo $value['title']?></h4></a>
-						<p><?php echo split_char($value['description'],150,1)." ..."?></p>
-						<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug']?>" class="text-uppercase more pull-right">Chi tiết</a>
-					</div>
-					
+					</a>
 				</div>
 			<?php }
 			?>

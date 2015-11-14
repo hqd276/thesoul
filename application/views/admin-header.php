@@ -36,6 +36,9 @@
 	          	</ul>
 	        </li>
 	        <li>
+	        	<a href="<?php echo base_url();?>admin/member">Khách hàng</a>
+	        </li>
+	        <li>
 	        	<a href="<?php echo base_url();?>admin/banner">Slide Show</a>
 	        </li>
           	<li>
