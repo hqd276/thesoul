@@ -39,8 +39,11 @@ class Product extends MX_Controller {
 		$data['list_product'] = $list_product;
 		$this->template->build('product',$data);
 	}
-	public function index_t($slug = ''){
+	public function index_t($slug = '',$page = 1){
+		$limit = 4;
+		$begin = $limit * ($page-1);
 
+		$strLimit = ' LIMIT '.$begin.','.($limit+1);
 		$data = array('slug'=>'');
 		if ($slug){
 			$category = $this->modelcategory->getCategoryBy('slug',$slug);
@@ -49,13 +52,26 @@ class Product extends MX_Controller {
 				$data['title'] = $category['name'];
 				$data['description'] = $category['description'];
 				$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent='.$category['id']);
-				$list_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),' LIMIT 0,16');
+				$list_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),$strLimit);
 			}
 		}else{
+			$slug = 0;
 			$data['cat'] = array('id'=>0,'name'=>'');
 			$data['title'] = 'Danh mục sản phẩm';
 			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent=-1');
-			$list_product = $this->modelproduct->getProduct('',' LIMIT 0,16');
+			$list_product = $this->modelproduct->getProduct('',$strLimit);
+		}
+		if (count($list_product) > $limit) {
+			unset ($list_product[$limit]);
+			$data['link_next'] = base_url('danh-muc-san-pham/'.$slug.'/'.($page+1));
+		}else{
+			$data['link_next'] = '#';
+		}
+		
+		if ($page>1){
+			$data['link_prev'] = base_url('danh-muc-san-pham/'.$slug.'/'.($page-1));
+		}else{
+			$data['link_prev'] = '#';
 		}
 
 		$data['list_product'] = $list_product;

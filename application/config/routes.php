@@ -67,6 +67,7 @@ $route['chi-tiet-tin/(:any)'] = "news/detail_t/$1";
 
 $route['danh-muc-san-pham'] = "product/index_t";
 $route['danh-muc-san-pham/(:any)'] = "product/index_t/$1";
+$route['danh-muc-san-pham/(:any)/(:any)'] = "product/index_t/$1/$2";
 $route['chi-tiet-san-pham/(:any)'] = "product/detail_t/$1";
 
 $route['admin'] = "admin";

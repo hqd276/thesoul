@@ -1,4 +1,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/product.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.css">
+
+<style type="text/css">
+    .ekko-lightbox .modal-dialog {
+    	width: 70% !important;
+    }
+</style>
 <div class="container">
 	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
 	<div class="row">
@@ -11,16 +18,36 @@
 				?>
 	  		</ul>
 	  	</div>
-		<div class="product-form col-sm-9">
+		<div class="product-form col-sm-9 wrapper-parent">
 			<?php foreach ($list_product as $key => $value) {?>
 				<div class="item col-sm-3">
-					<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug']?>">
+					<a href="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $value['title'] ?>" data-parent=".wrapper-parent">
 						<img class="img-responsive" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
 					</a>
 				</div>
 			<?php }
 			?>
+			<div class="clearfix"></div>
+			<nav>
+			  <ul class="pager">
+			    <li class="previous <?php if ($link_prev=='#') echo 'disabled'?>"><a href="<?php echo $link_prev;?>"><span aria-hidden="true">&larr;</span> Trước</a></li>
+			    <li class="next <?php if ($link_next=='#') echo 'disabled'?>"><a href="<?php echo $link_next;?>">Sau <span aria-hidden="true">&rarr;</span></a></li>
+			  </ul>
+			</nav>
 		</div>
 	</div>
 	<div class="clearfix"></div>
 </div>
+<script src="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function ($) {
+        // delegate calls to data-toggle="lightbox"
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            return $(this).ekkoLightbox({
+                always_show_close: true
+            });
+        });
+    });
+</script>

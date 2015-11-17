@@ -132,7 +132,7 @@ class Gallery extends MX_Controller{
 
 			if ($this->modelgallery->updateImage($id,$dataC)){
 				$data['b_Check']= true;
-				redirect(base_url('list-category/'.$type));
+				redirect(base_url('admin/gallery/index'));
 			}else{
 				$data['b_Check']= false;
 			}
