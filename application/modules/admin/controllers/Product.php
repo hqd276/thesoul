@@ -150,6 +150,7 @@ class Product extends MX_Controller{
 						$dataC['image'] = $image_data["file_name"];
 					}
 				}
+				var_dump($dataC);die;
 				if ($this->modelproduct->insertproduct($dataC)){
 					$data['b_Check']= true;
 					// redirect(base_url('list-category/'.$type));
