@@ -150,7 +150,11 @@ class Product extends MX_Controller{
 						$dataC['image'] = $image_data["file_name"];
 					}
 				}
+<<<<<<< Updated upstream
 				var_dump($dataC);die;
+=======
+				// var_dump($dataC);die;
+>>>>>>> Stashed changes
 				if ($this->modelproduct->insertproduct($dataC)){
 					$data['b_Check']= true;
 					// redirect(base_url('list-category/'.$type));

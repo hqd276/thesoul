@@ -3,9 +3,16 @@
 
 <style type="text/css">
     .ekko-lightbox .modal-dialog {
+<<<<<<< Updated upstream
     	width: 40% !important;
     }
 </style>
+=======
+    	width: 70% !important;
+    }
+</style>
+
+>>>>>>> Stashed changes
 <div class="container">
 	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
 	<div class="row">
@@ -21,7 +28,11 @@
 		<div class="product-form col-sm-9 wrapper-parent">
 			<?php foreach ($list_product as $key => $value) {?>
 				<div class="item col-sm-3">
+<<<<<<< Updated upstream
 					<a href="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $value['title'] ?>" data-parent=".wrapper-parent">
+=======
+					<a  href="<?php echo base_url("uploads/product/".$value['image']); ?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $value['title'] ?>" data-parent=".wrapper-parent">
+>>>>>>> Stashed changes
 						<img class="img-responsive" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
 					</a>
 				</div>
@@ -38,6 +49,10 @@
 	</div>
 	<div class="clearfix"></div>
 </div>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 <script src="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.js"></script>
 
 <script type="text/javascript">
