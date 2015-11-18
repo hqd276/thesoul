@@ -23,7 +23,7 @@ class Gallery extends MX_Controller {
 	public function index($type = 0,$cat = 0){
 		$data = array();
 		$data['page'] = "gallery";
- 		$list_items = $this->modelgallery->getGallery(array('status'=>1));
+ 		$list_items = $this->modelgallery->getGallery(array('status'=>1),null,'`order`');
  
  		$data['list_items'] = $list_items;
 		$this->template->build('gallery',$data);

@@ -3,7 +3,7 @@
 
 <style type="text/css">
     .ekko-lightbox .modal-dialog {
-    	width: 70% !important;
+    	width: 40% !important;
     }
 </style>
 <div class="container">

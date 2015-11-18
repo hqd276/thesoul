@@ -40,7 +40,7 @@ class Product extends MX_Controller {
 		$this->template->build('product',$data);
 	}
 	public function index_t($slug = '',$page = 1){
-		$limit = 4;
+		$limit = 16;
 		$begin = $limit * ($page-1);
 
 		$strLimit = ' LIMIT '.$begin.','.($limit+1);

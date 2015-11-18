@@ -3,7 +3,7 @@
 
 <style type="text/css">
     .ekko-lightbox .modal-dialog {
-    	width: 60% !important;
+    	width: 40% !important;
     }
 </style>
 
@@ -14,7 +14,7 @@
         <li><a href="<?php echo base_url().'gallery'?>" target=""><b>Thư viện ảnh</b></a></li>
     </ol>
 
-	<div class="row col-md-12 wrapper-parent">
+	<div class="col-md-12 wrapper-parent">
         <?php foreach ($list_items as $key => $value) {?>
             <div class="col-xs-6 col-md-3">
                 <div class="thumbnail">
