@@ -13,17 +13,5 @@
   color: #000;
   display: block;
   padding: 5px;
-}
-.product-form  .item {
-	margin-bottom: 30px;
-	height: 180px;
-	overflow: hidden;
-}
-.product-form .item a{
-	border:solid 1px #ccc;
-	display: block;
-	height: 100%;
-}
-.product-form .item img  {
-	max-width: 100%;
+  font-size: 18px;
 }

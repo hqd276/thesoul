@@ -88,6 +88,9 @@
 	font-size: 18px;
 	margin-top: 20px;
 }
+.wrapper-parent .item {
+	margin-bottom: 0;
+}
 
 @media (max-width: 768px){
 	.header-customer {

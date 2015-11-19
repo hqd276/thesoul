@@ -8,11 +8,7 @@
 </style>
 
 <div class="container">
-    <h1>Thư viện ảnh</h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo base_url();?>" target="">Trang chủ</a></li>
-        <li><a href="<?php echo base_url().'gallery'?>" target=""><b>Thư viện ảnh</b></a></li>
-    </ol>
+    <img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
 
 	<div class="col-md-12 wrapper-parent">
         <?php foreach ($list_items as $key => $value) {?>

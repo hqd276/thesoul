@@ -1,4 +1,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/home.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.css">
+
+<style type="text/css">
+    .ekko-lightbox .modal-dialog {
+    	width: 40% !important;
+    }
+</style>
 
 <div class="container">
 	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
@@ -38,12 +45,14 @@
 	
 	<section class="hot-product">
 		<img class="header-hot" src="<?php echo base_url();?>assets/images/hotproduct.png">
-		<div class="row">
+		<div class="row wrapper-parent">
 			<?php foreach ($product_home as $key => $value){?>
 			<div class="col-sm-3 col-xs-6 item text-center">
-				<a href="<?php echo base_url('chi-tiet-san-pham/'.$value['slug']);?>">
-					<img src="<?php echo base_url('uploads/product/thumbs/'.$value['image']);?>">
-				</a>
+				<div class="thumbnail">
+					<a  href="<?php echo base_url("uploads/product/".$value['image']); ?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $value['title'] ?>" data-parent=".wrapper-parent">
+						<img src="<?php echo base_url('uploads/product/thumbs/'.$value['image']);?>">
+					</a>
+				</div>
 			</div>
 			<?php }?>
 		</div>
@@ -53,12 +62,14 @@
 		<div class="header-customer">
 			<div class="text-center"><span class="text-uppercase">Khách hàng tiêu biểu</span></div>
 		</div>
-		<div class="row">
+		<div class="row wrapper-parent">
 			<?php foreach ($partner as $key => $value){?>
 			<div class="col-sm-3 col-xs-6 item text-center">
-				<a href="<?php echo $value['description']?>">
-					<img src="<?php echo base_url('uploads/member/thumbs/'.$value['image']);?>">
-				</a>
+				<div class="thumbnail">
+					<a href="<?php echo base_url("uploads/member/".$value['image']); ?>" data-toggle="lightbox" data-gallery="multiimages" data-parent=".wrapper-parent">
+						<img src="<?php echo base_url('uploads/member/thumbs/'.$value['image']);?>">
+					</a>
+				</div>
 			</div>
 			<?php }?>
 		</div>
@@ -125,3 +136,17 @@
 		</div>
 	</section>
 </div>
+
+<script src="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function ($) {
+        // delegate calls to data-toggle="lightbox"
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            return $(this).ekkoLightbox({
+                always_show_close: true
+            });
+        });
+    });
+</script>
