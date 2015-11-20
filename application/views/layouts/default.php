@@ -29,7 +29,12 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/footer.css">
 
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,900,300' rel='stylesheet' type='text/css'>
-
+<script lang="javascript">
+(function() {var _h1= document.getElementsByTagName('title')[0] || false;
+var product_name = ''; if(_h1){product_name= _h1.textContent || _h1.innerText;}var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=f006f9ab84730f1660b256477324d998&data=eyJzc29faWQiOjMyOTk1ODIsImhhc2giOiIyNGFlYTllODIxNDk4OGUzMTBlYmM4N2RiNTA4NDZkYyJ9&pname='+product_name;
+var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();
+</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript>	
 </head>
 
 <body>
