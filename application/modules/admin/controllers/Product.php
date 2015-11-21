@@ -103,6 +103,8 @@ class Product extends MX_Controller{
 						'hot_product' =>'',
 						'home_product' =>'',
 						'image' =>'',
+						'image_detail_1' =>'',
+						'image_detail_2' =>'',
 						'order' =>'',
 						'status' =>'');
 		
@@ -150,14 +152,23 @@ class Product extends MX_Controller{
 						$dataC['image'] = $image_data["file_name"];
 					}
 				}
-<<<<<<< Updated upstream
-				var_dump($dataC);die;
-=======
-				// var_dump($dataC);die;
->>>>>>> Stashed changes
+				if (!empty ($_FILES['image_detail_1'])) {
+					$this->load->model(array('Mgallery'));
+					$image_data = $this->Mgallery->do_upload("/product/","image_detail_1");
+					if ($image_data) {
+						$dataC['image_detail_1'] = $image_data["file_name"];
+					}
+				}
+				if (!empty ($_FILES['image_detail_2'])) {
+					$this->load->model(array('Mgallery'));
+					$image_data = $this->Mgallery->do_upload("/product/","image_detail_2");
+					if ($image_data) {
+						$dataC['image_detail_2'] = $image_data["file_name"];
+					}
+				}
 				if ($this->modelproduct->insertproduct($dataC)){
 					$data['b_Check']= true;
-					// redirect(base_url('list-category/'.$type));
+					redirect(base_url('admin/product/index'));
 				}else{
 					$data['b_Check']= false;
 				}
@@ -229,10 +240,24 @@ class Product extends MX_Controller{
 						$dataC['image'] = $image_data["file_name"];
 					}
 				}
+				if (!empty ($_FILES['image_detail_1'])) {
+					$this->load->model(array('Mgallery'));
+					$image_data = $this->Mgallery->do_upload("/product/","image_detail_1");
+					if ($image_data) {
+						$dataC['image_detail_1'] = $image_data["file_name"];
+					}
+				}
+				if (!empty ($_FILES['image_detail_2'])) {
+					$this->load->model(array('Mgallery'));
+					$image_data = $this->Mgallery->do_upload("/product/","image_detail_2");
+					if ($image_data) {
+						$dataC['image_detail_2'] = $image_data["file_name"];
+					}
+				}
 
 				if ($this->modelproduct->updateproduct($id,$dataC)){
 					$data['b_Check']= true;
-					// redirect(base_url('list-category/'.$type));
+					redirect(base_url('admin/product/index'));
 				}else{
 					$data['b_Check']= false;
 				}

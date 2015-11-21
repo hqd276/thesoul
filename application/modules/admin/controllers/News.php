@@ -37,7 +37,7 @@ class News extends MX_Controller{
 				if($category)
 					$news[$key]['category'] = $category["name"];
 				else
-					$news[$key]['category'] = "NISSAN";
+					$news[$key]['category'] = "The soul";
 			}
 
 		}

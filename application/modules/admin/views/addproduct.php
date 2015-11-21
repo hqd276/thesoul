@@ -77,6 +77,28 @@ tinymce.init({
 			</div>
 		</div>
 		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Image Detail 1</label>
+			<div class="col-sm-10">
+				<?php 
+				if ($item['image_detail_1']!='') {
+					echo "<img class='img_item' style='height:150px;' src='".base_url("uploads/product/".$item['image_detail_1'])."'/>";
+				}
+				?>
+			  	<input type="file" class="form-control" id="inputEmail3" name="image_detail_1" placeholder="Image">
+			</div>
+		</div>
+		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Image Detail 2</label>
+			<div class="col-sm-10">
+				<?php 
+				if ($item['image_detail_2']!='') {
+					echo "<img class='img_item' style='height:150px;' src='".base_url("uploads/product/".$item['image_detail_2'])."'/>";
+				}
+				?>
+			  	<input type="file" class="form-control" id="inputEmail3" name="image_detail_2" placeholder="Image">
+			</div>
+		</div>
+		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Category</label>
 			<div class="col-sm-10">
 				<select class='form-control' name='category_id'>
