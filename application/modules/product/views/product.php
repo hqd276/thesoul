@@ -4,13 +4,32 @@
 	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
 	<div class="row">
 	  	<div class="menu-left col-sm-3">
-	  		<h3 class="text-uppercase text-center"><?php echo $title?></h3>
-	  		<ul class="list-unstyled">
-	  			<?php foreach ($child_category as $k => $v) {?>
-	  			<li><a href="<?php echo base_url('danh-muc-san-pham/'.$v['slug']);?>"><?php echo $v['name']?></a></li>
-	  			<?php }
-				?>
-	  		</ul>
+	  		<div class="panel-group" id="accordion">
+  			<?php if($list_categories){
+  				foreach ($list_categories as $key => $value) {?>
+  				<div class="cat-group">
+	            <h3>
+                    <a 
+                    <?php if ($value['child']){ 
+                    	echo ' data-toggle="collapse" data-parent="#accordion" href="#collapse'.$key.'"';
+                	}else{ 
+                		echo 'href="'.base_url("danh-muc-san-pham/".$value['slug']).'"'; 
+            		}?>>
+            		<?php echo $value['name']?>
+            		</a>
+                </h3>
+	            <?php if ($value['child']){?>
+	            <ul id="collapse<?php echo $key?>" class="panel-collapse collapse list-unstyled">
+	            	<?php foreach ($value['child'] as $k => $v) {?>
+	                    <li><a href="<?php echo base_url('danh-muc-san-pham/'.$v['slug']);?>"><?php echo $v['name']?></a></li>
+	            	<?php }?>
+	            </ul>
+	            
+	            <?php }?>
+	            </div>
+	        <?php }
+		        }?>
+		    </div>
 	  	</div>
 		<div class="product-form col-sm-9 wrapper-parent">
 			<?php foreach ($list_product as $key => $value) {?>

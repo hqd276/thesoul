@@ -49,8 +49,7 @@ tinymce.init({
 						}
 					?>
 				</span>
-				<?php if(form_error('name')!='') echo '<label class="control-label alert alert-warning" for="inputError1">'.form_error('name').'</label>'; ?>
-				<?php if(isset($upload_mess)) echo '<label class="control-label alert alert-warning" for="inputError1">'.$upload_mess.'</label>'; ?>
+				<?php echo validation_errors(); ?>
 			</div>
 		</div>
 		<div class="form-group col-sm-12">

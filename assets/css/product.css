@@ -1,10 +1,12 @@
-.menu-left {
-
+.menu-left .cat-group{
+	margin-bottom: 10px;
 }
 .menu-left h3{
   background: #d14841;
-  color: #fff;
   padding: 10px;
+}
+.menu-left h3 a{
+  color: #fff;
 }
 .menu-left ul {
   margin: 10px 0;
