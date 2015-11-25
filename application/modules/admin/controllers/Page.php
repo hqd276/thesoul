@@ -76,6 +76,8 @@ class Page extends MX_Controller{
 			if($this->form_validation->run() == TRUE){ 
 				$value = array();
 				$value['name'] = $this->input->post('name'); 
+				$value['description'] = $this->input->post('description'); 
+				$value['detail'] = $this->input->post('detail'); 
 				$value['slug'] = $dataC['slug'];
 
 				$value['image'] = $dataC['image'];
@@ -88,7 +90,6 @@ class Page extends MX_Controller{
 				}elseif(isset($dataC['image']) && ($dataC['image']!='')){
 					$value['image'] = $dataC['image'];
 				}
-
 				$value['image1'] = $dataC['image1'];
 				if (!empty ($_FILES['image1'])) {
 					$this->load->model(array('mgallery'));
@@ -99,9 +100,6 @@ class Page extends MX_Controller{
 				}elseif(isset($dataC['image1']) && ($dataC['image1']!='')){
 					$value['image1'] = $dataC['image1'];
 				}
-
-				$value['description'] = $this->input->post('description'); 
-				$value['detail'] = $this->input->post('detail'); 
 
 				$dataC['name'] = $value['name'];
 				$dataC['image'] = $value['image'];

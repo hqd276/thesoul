@@ -47,12 +47,45 @@
 		<img class="header-hot" src="<?php echo base_url();?>assets/images/hotproduct.png">
 		<div class="row wrapper-parent">
 			<?php foreach ($product_home as $key => $value){?>
-			<div class="col-sm-3 col-xs-6 item text-center">
+			<div class="item">
 				<div class="thumbnail">
-					<a  href="<?php echo base_url("uploads/product/".$value['image']); ?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $value['title'] ?>" data-parent=".wrapper-parent">
-						<img src="<?php echo base_url('uploads/product/thumbs/'.$value['image']);?>">
+					<a data-toggle="modal" data-target="#productModal_<?php echo $value['id']?>">
+						<img class="img-responsive" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
 					</a>
 				</div>
+			</div>
+			<div class="modal fade" id="productModal_<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel"><?php echo $value['title']?></h4>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="col-sm-8">
+			      	<!-- Nav tabs -->
+					  <ul class="nav nav-tabs" role="tablist">
+					    <li class="active"><a href="#image_detail_1" data-toggle="tab">Ảnh chi tiết 1</a></li>
+					    <li ><a href="#image_detail_2" data-toggle="tab">Ảnh chi tiết 2</a></li>
+					  </ul>
+					<!-- Tab panes -->
+					  <div class="tab-content">
+					    <div class="tab-pane active" id="image_detail_1">
+					    	<img class="img-responsive" src="<?php echo base_url().'uploads/product/'.$value['image_detail_1']?>">
+					    </div>
+					    <div class="tab-pane" id="image_detail_2">
+					    	<img class="img-responsive" src="<?php echo base_url().'uploads/product/'.$value['image_detail_2']?>">
+					    </div>
+					  </div>
+					</div>
+					<div class="col-sm-4">
+						<div><i><?php echo $value['description']?></i></div>
+						<div><?php echo $value['detail']?></div>
+					</div>
+					<div class="clearfix"></div>
+			      </div>
+			    </div>
+			  </div>
 			</div>
 			<?php }?>
 		</div>
@@ -64,7 +97,7 @@
 		</div>
 		<div class="row wrapper-parent">
 			<?php foreach ($partner as $key => $value){?>
-			<div class="col-sm-3 col-xs-6 item text-center">
+			<div class="item">
 				<div class="thumbnail">
 					<a href="<?php echo base_url("uploads/member/".$value['image']); ?>" data-toggle="lightbox" data-gallery="multiimages" data-parent=".wrapper-parent">
 						<img src="<?php echo base_url('uploads/member/thumbs/'.$value['image']);?>">

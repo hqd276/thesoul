@@ -25,6 +25,12 @@ class Product extends MX_Controller {
 		$data['title'] = "Sản phẩm";
 		$data['page'] = "product";
 
+		$list_categories = $this->modelcategory->getCategories(array('status'=>1,'type'=>1,'parent'=>-1),null," ORDER BY `order`");
+		foreach ($list_categories as $key => $value) {
+			$list_categories[$key]['child'] = $this->modelcategory->getCategories(array('status'=>1,'parent'=>$value['id']),null," ORDER BY `order`");
+		}
+		$data['list_categories'] = $list_categories;
+
 		if ($cat>0){
 			$category = $this->modelcategory->getCategoryById($cat);
 			$data['cat'] = $category;
@@ -43,22 +49,26 @@ class Product extends MX_Controller {
 		$limit = 16;
 		$begin = $limit * ($page-1);
 
+
 		$strLimit = ' LIMIT '.$begin.','.($limit+1);
 		$data = array('slug'=>'');
+
+		$list_categories = $this->modelcategory->getCategories(array('status'=>1,'type'=>1,'parent'=>-1),null," ORDER BY `order`");
+		foreach ($list_categories as $key => $value) {
+			$list_categories[$key]['child'] = $this->modelcategory->getCategories(array('status'=>1,'parent'=>$value['id']),null," ORDER BY `order`");
+		}
+		$data['list_categories'] = $list_categories;
+		
 		if ($slug){
 			$category = $this->modelcategory->getCategoryBy('slug',$slug);
 			if ($category){
-				$data['cat'] = $category;
 				$data['title'] = $category['name'];
 				$data['description'] = $category['description'];
-				$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent='.$category['id']);
 				$list_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),$strLimit);
 			}
 		}else{
 			$slug = 0;
-			$data['cat'] = array('id'=>0,'name'=>'');
 			$data['title'] = 'Danh mục sản phẩm';
-			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent=-1');
 			$list_product = $this->modelproduct->getProduct('',$strLimit);
 		}
 		if (count($list_product) > $limit) {
