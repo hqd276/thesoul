@@ -1,0 +1,19 @@
+.menu-left .cat-group{
+	margin-bottom: 10px;
+}
+.menu-left h3{
+  background: #d14841;
+  padding: 10px;
+}
+.menu-left h3 a{
+  color: #fff;
+}
+.menu-left ul {
+  margin: 10px 0;
+}
+.menu-left ul li a{
+  color: #000;
+  display: block;
+  padding: 5px;
+  font-size: 18px;
+}
