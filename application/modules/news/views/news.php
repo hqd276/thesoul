@@ -20,4 +20,10 @@
 			?>
 	
 	</div>
+	<nav>
+	  <ul class="pager">
+	    <li class="previous <?php if(!$older_link) echo 'disabled'?>"><a href="<?php echo ($older_link)?$older_link:'#'?>"><span aria-hidden="true">&larr;</span> Older</a></li>
+	    <li class="next <?php if(!$newer_link) echo 'disabled'?>"><a href="<?php echo ($newer_link)?$newer_link:'#'?>">Newer <span aria-hidden="true">&rarr;</span></a></li>
+	  </ul>
+	</nav>
 </div>

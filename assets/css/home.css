@@ -77,8 +77,8 @@
 .tab-content .panel-default{
 	border-color: #475577;
 	margin-top: 10px;
-	padding: 20px;
-	border-radius: 2px;
+	/*padding: 20px;
+	border-radius: 2px;*/
 }
 .tab-content h3 {
 	font-size: 24px;

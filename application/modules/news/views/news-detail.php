@@ -18,11 +18,7 @@
 			<div class="news-detail">
 				<p class="description"><i><strong> <?php echo $item['description']?></strong></i></p>
 				<hr>
-				<?php if($item['image']!=''){?>
-				<img class="img-responsive col-md-8 col-md-offset-2" src="<?php echo base_url().'uploads/news/'.$item['image']?>">		
-				<div class="clearfix"></div>
-				<hr>
-				<?php }?>
+				
 		        <div class="detail" id="detail"><?php echo $item['detail']?></div>
 				<hr>
 				<span class="glyphicon glyphicon-tags"></span> <?php echo $item['tag']?> 

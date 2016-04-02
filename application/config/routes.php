@@ -61,6 +61,7 @@ $route['dat-hang'] = "booking";
 $route['lien-he'] = "contact";
 $route['ve-chung-toi'] = "about";
 $route['tin-tuc'] = "news";
+$route['tin-tuc/(:any)'] = "news/index/0/$1";
 $route['thu-vien-anh'] = "gallery";
 
 $route['chi-tiet-tin/(:any)'] = "news/detail_t/$1";

@@ -22,27 +22,40 @@ class News extends MX_Controller {
 		$this->template->set_partial('footer','footer',$data);
 	}
 	
-	public function index($type = 0,$cat = 0){
-		$dataR = Modules::run('left',$type);
-		$this->template->set_partial('left','left',$dataR);
-
+	public function index($type = 0,$page=1){
 		$data = array('slug'=>'');
 		$data['title'] = "News";
 		$data['page'] = "news";
 
-		if ($cat>0){
+		if($page<1)
+			$page=1;
+		$item_per_page = 5;
+		$begin = ($page-1) * $item_per_page;
+
+		if (!empty($cat)){
 			$category = $this->modelcategory->getCategoryById($cat);
 			$data['cat'] = $category;
-			$list_news = $this->modelnews->getNews(array('category_id'=>$cat),' LIMIT 0,5');
+			$list_news = $this->modelnews->getNews(array('category_id'=>$cat),' LIMIT '.$begin.','.($item_per_page+1));
 		}else{
 			$data['cat'] = array('type'=>$type,'id'=>0,'name'=>'');
-			$list_news = $this->modelnews->getNews(array('type'=>$type),' LIMIT 0,5');
+			$list_news = $this->modelnews->getNews(array('type'=>$type),' LIMIT '.$begin.','.($item_per_page+1));
 		}
+		$newer_link = '';
+		if(count($list_news)>$item_per_page){
+			$newer_link = base_url().'tin-tuc/'.($page+1);
+			unset($list_news[$item_per_page]);
+		}
+		$older_link = '';
+		if ($page>1) {
+			$older_link = base_url().'tin-tuc/'.($page-1);
+		}
+		$data['newer_link'] = $newer_link;
+		$data['older_link'] = $older_link;
 
 		$data['list_news'] = $list_news;
 		$this->template->build('news',$data);
 	}
-	public function index_t($type = 0,$slug = ''){
+	public function index_t($type = 0,$slug = '',$page){
 		$dataR = Modules::run('left',0);
 		$this->template->set_partial('left','left',$dataR);
 
@@ -62,6 +75,17 @@ class News extends MX_Controller {
 				}
 			}
 		}
+		$newer_link = '';
+		if(count($news)>$item_per_page){
+			$newer_link = base_url().'tin-tuc/'.($page+1);
+			unset($news[$item_per_page]);
+		}
+		$older_link = '';
+		if ($page>1) {
+			$older_link = base_url().'tin-tuc/'.($page-1);
+		}
+		$data['newer_link'] = $newer_link;
+		$data['older_link'] = $older_link;
 
 		$data['list_news'] = $list_news;
 		$this->template->build('news',$data);

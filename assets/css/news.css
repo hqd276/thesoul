@@ -1,5 +1,14 @@
+.news-content .col-sm-9 {
+	border: 1px solid #ccc;
+}
 .news-content h2 {
 	color: #5ecdd4;
+}
+.news-content {
+ 	margin-right: 0; 
+}
+.news-content .col-sm-9 {
+	padding: 15px;
 }
 .news-content .item {
 	padding: 20px 0;
