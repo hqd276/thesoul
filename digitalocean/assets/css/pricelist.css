@@ -1,0 +1,9 @@
+.pricelist-title {
+  display: block;
+  width: 200px;
+  color: #fff;
+  background-color: #d14841;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}

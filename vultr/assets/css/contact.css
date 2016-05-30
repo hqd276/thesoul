@@ -1,0 +1,29 @@
+.adv-contact {
+	width: 100%;
+}
+.contact-block {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #28324e;
+	color: #fff;
+	overflow: hidden;
+}
+.contact-btn {
+	background-color: #d14841;
+	font-size: 18px;
+	padding: 10px;
+	display: block;
+	width: 250px;
+	margin: 20px auto;
+}
+#map {
+	border:5px  #d14740 solid;
+	width: 100%;
+	height: 100%;
+}
+.map {
+	border:5px  #fff solid;
+	height: 500px;
+	width: 100%;
+	margin-bottom: 20px;
+}

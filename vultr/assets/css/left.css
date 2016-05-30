@@ -1,0 +1,20 @@
+ul.cat {
+	margin-top: 20px;
+}
+ul.cat li a {
+	color: #e97c2b;
+    font-size: 1.2em;
+    line-height: 20px;
+}
+
+ul.service li {
+	border-bottom: 1px dotted #ccc;
+}
+ul.service li a {
+	color: #696969;
+	font-size: 12px;
+	margin-left: 10px;
+}
+ul.service li a i{
+	margin-right: 3px;
+}

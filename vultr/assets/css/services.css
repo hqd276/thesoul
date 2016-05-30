@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,vietnamese);
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidebar {
+  margin-top: 30px;
+}
+
+.sidebar ul .title {
+  color: #FECB00;
+  text-transform: uppercase;
+  line-height: 28px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  margin-top: 20px;
+}
+
+.sidebar ul .title:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.sidebar ul .title ul li {
+  padding-left: 10px;
+}
+
+.sidebar ul .title ul li a {
+  text-transform: none;
+  color: #2E332F;
+  border-bottom: 1px solid #d5d6d5;
+  font-weight: normal;
+  letter-spacing: 0.5;
+  line-height: 24px;
+  display: inline-block;
+}
+
+.sidebar ul .title ul li a:hover {
+  color: #FECB00;
+  border-bottom: 1px solid #fef4cc;
+}
+
+.postgroup {
+  margin-top: 30px;
+}
+
+.postgroup .post {
+  padding-bottom: 30px;
+  padding-top: 20px;
+  border-bottom: 1px solid #FFD535;
+  overflow: hidden;
+}
+
+.postgroup .post:nth-of-type(1) {
+  padding-top: 0;
+}
+
+.postgroup .post h4 {
+  padding-top: 0;
+  margin-top: 0;
+  line-height: 28px;
+}
+
+.postgroup .post h4 a {
+  color: #2E332F;
+}
+
+.postgroup .post h4 a:hover {
+  color: #FECB00;
+}
+
+.postgroup .post .btn-default {
+  border: 3px solid #FECB00;
+  text-transform: uppercase;
+}
+
+.postgroup .post .btn-default:hover {
+  background-color: #FECB00;
+  color: #2E332F;
+}
+
+.postgroup .post .btn {
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  .postgroup .post .btn {
+    margin-bottom: 20px;
+  }
+}
